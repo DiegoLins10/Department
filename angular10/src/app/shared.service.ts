@@ -18,41 +18,41 @@ readonly PhotoUrl = "http://localhost:5000/Photos"
   }
 
   addDepartment(val:any){
-    return this.http.post(this.APIUrl + '/Department', val);
+    return this.http.post(this.APIUrl + '/department', val);
   }
 
   updateDepartment(val:any){
-    return this.http.put(this.APIUrl + '/Department', val);
+    return this.http.put(this.APIUrl + '/department', val);
   }
 
   deleteDepartment(val:any){
-    return this.http.delete(this.APIUrl + '/Department/', val);
+    return this.http.delete(this.APIUrl + '/department/', val);
   }
 
   /* METODOS PARA AS OPERACOES NA TABLE EMPLOYEE */
   getEmpList():Observable<any[]>{
-    return this.http.get<any>(this.APIUrl + '/Employee');
+    return this.http.get<any>(this.APIUrl + '/employee');
   }
 
   addEmployee(val:any){
-    return this.http.post(this.APIUrl + '/Employee', val);
+    return this.http.post(this.APIUrl + '/employee', val);
   }
 
   updateEmployee(val:any){
-    return this.http.put(this.APIUrl + '/Employee', val);
+    return this.http.put(this.APIUrl + '/employee', val);
   }
 
   deleteEmployee(val:any){
-    return this.http.delete(this.APIUrl + '/Employee/', val);
+    return this.http.delete(this.APIUrl + '/employee/', val);
   }
 
   /* METODO PARA SALVAR AS PROFILES PICTURES */
   UploadPhoto(val:any){
-    return this.http.post(this.APIUrl + '/Employee/SaveFile', val);
+    return this.http.post(this.APIUrl + '/employee/SaveFile', val);
   }
 
   /* PEGAR O NOME DE TODOS OS DEPARTAMENTOS */
   getAllDepartmentNames():Observable<any[]>{
-    return this.http.get<any[]>(this.APIUrl+'/Employee/GetAllDepartmentNames');
+    return this.http.get<any[]>(this.APIUrl+'/employee/GetAllDepartmentNames');
   }
 }
