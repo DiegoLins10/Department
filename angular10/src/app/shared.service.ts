@@ -26,7 +26,7 @@ readonly PhotoUrl = "http://localhost:5000/Photos"
   }
 
   deleteDepartment(val:any){
-    return this.http.delete(this.APIUrl + '/department/', val);
+    return this.http.delete(this.APIUrl + '/department/' + val);
   }
 
   /* METODOS PARA AS OPERACOES NA TABLE EMPLOYEE */
@@ -43,7 +43,7 @@ readonly PhotoUrl = "http://localhost:5000/Photos"
   }
 
   deleteEmployee(val:any){
-    return this.http.delete(this.APIUrl + '/employee/', val);
+    return this.http.delete(this.APIUrl + '/employee/'+ val);
   }
 
   /* METODO PARA SALVAR AS PROFILES PICTURES */
