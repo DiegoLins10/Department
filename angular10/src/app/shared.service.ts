@@ -47,7 +47,7 @@ readonly PhotoUrl = "http://localhost:5000/Photos"
   }
 
   /* METODO PARA SALVAR AS PROFILES PICTURES */
-  UploadPhoto(val:any){
+  uploadPhoto(val:any){
     return this.http.post(this.APIUrl + '/employee/SaveFile', val);
   }
 
