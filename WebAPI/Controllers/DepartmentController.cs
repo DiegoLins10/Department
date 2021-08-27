@@ -33,7 +33,7 @@ namespace WebAPI.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    select DepartmentId, DepartmentName from dbo.Department";
+                    select IdDepto, NomeDepto, Gerente, Divisao, Local from dbo.Departamento";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
             SqlDataReader myReader;
@@ -59,8 +59,11 @@ namespace WebAPI.Controllers
         public JsonResult Post(Department dep)
         {
             string query = @"
-                    insert into dbo.Department values 
-                    ('"+dep.DepartmentName+@"')
+                    insert into dbo.Departamento values 
+                    ('" + dep.NomeDepto+@"'
+                    ,'"+dep.Gerente+@"'
+                    ,'"+dep.Divisao+@"'
+                    ,'"+dep.Local+@"')
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
@@ -88,8 +91,11 @@ namespace WebAPI.Controllers
         public JsonResult Put(Department dep)
         {
             string query = @"
-                    update dbo.Department set DepartmentName = '"+dep.DepartmentName+@"'
-                    where DepartmentId = "+dep.DepartmentId + @";  
+                    update dbo.Departamento set NomeDepto = '"+dep.NomeDepto+ @"'
+                    ,Gerente = '" + dep.Gerente + @"'
+                    ,Divisao = '" + dep.Divisao + @"'
+                    ,Local = '" + dep.Local + @"'
+                    where IdDepto = " + dep.IdDepto + @";  
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
@@ -116,8 +122,8 @@ namespace WebAPI.Controllers
         public JsonResult Delete(int id)
         {
             string query = @"
-                    delete from dbo.Department
-                    where DepartmentId = " + id + @";  
+                    delete from dbo.Departamento
+                    where IdDepto = " + id + @";  
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");

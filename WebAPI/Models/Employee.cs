@@ -7,9 +7,13 @@ namespace WebAPI.Models
 {
     public class Employee
     {
-        public int EmployeeId { get; set; }
-        public string EmployeeName { get; set; }
-        public string Department { get; set; }
+        public int IdEmpregado { get; set; }
+        public string NomeEmpregado { get; set; }
+        public string IdDepto { get; set; }
+        public string Cargo { get; set; }
+        public string Tempo_Emp { get; set; }
+        public double Salario { get; set; }
+        public double Comissao { get; set; }
         public string DateOfJoining { get; set; }
         public string PhotoFileName { get; set; }
     }

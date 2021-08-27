@@ -40,10 +40,10 @@ namespace WebAPI.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    select EmployeeId, EmployeeName, Department,
+                    select IdEmpregado, NomeEmpregado, IdDepto, Cargo, Tempo_Emp, Salario, Comissao,
                     convert(varchar(10),DateOfJoining,120) as DateOfJoining,
                     PhotoFileName
-                    from dbo.Employee";
+                    from dbo.Empregado";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
             SqlDataReader myReader;
@@ -69,12 +69,16 @@ namespace WebAPI.Controllers
         public JsonResult Post(Employee emp)
         {
             string query = @"
-                    insert into dbo.Employee 
-                    (EmployeeName, Department, DateOfJoining, PhotoFilename)
+                    insert into dbo.Empregado 
+                    (NomeEmpregado, IdDepto, Cargo, Tempo_Emp, Salario, Comissao, DateOfJoining, PhotoFileName)
                     values 
                     (
-                     '" + emp.EmployeeName + @"'
-                     ,'" + emp.Department + @"'
+                     '" + emp.NomeEmpregado + @"'
+                     ,'" + emp.IdDepto + @"'
+                     ,'" + emp.Cargo + @"'
+                     ,'" + emp.Tempo_Emp + @"'
+                     ,'" + emp.Salario + @"'
+                     ,'" + emp.Comissao + @"'
                      ,'" + emp.DateOfJoining + @"'
                      ,'" + emp.PhotoFileName + @"'
                     )
@@ -105,12 +109,16 @@ namespace WebAPI.Controllers
         public JsonResult Put(Employee emp)
         {
                 string query = @"
-                    update dbo.Employee set 
-                    EmployeeName = '" + emp.EmployeeName + @"'
-                    ,Department = '" + emp.Department + @"'
+                    update dbo.Empregado set 
+                    NomeEmpregado = '" + emp.NomeEmpregado + @"'
+                    ,IdDepto = '" + emp.IdDepto + @"'
+                    ,Cargo = '" + emp.Cargo + @"'
+                    ,Tempo_Emp = '" + emp.Tempo_Emp + @"'
+                    ,Salario = '" + emp.Salario + @"'
+                    ,Comissao = '" + emp.Comissao + @"'
                     ,DateOfJoining = '" + emp.DateOfJoining + @"'
                     ,PhotoFileName = '" + emp.PhotoFileName + @"'  
-                    where EmployeeId = " + emp.EmployeeId + @";  
+                    where IdEmpregado = " + emp.IdEmpregado + @";  
                     ";
                 DataTable table = new DataTable();
                 string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
@@ -137,8 +145,8 @@ namespace WebAPI.Controllers
         public JsonResult Delete(int id)
         {
             string query = @"
-                    delete from dbo.Employee
-                    where EmployeeId = " + id + @";  
+                    delete from dbo.Empregado
+                    where IdEmpregado = " + id + @";  
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
@@ -192,7 +200,7 @@ namespace WebAPI.Controllers
         public JsonResult GetAllDepartmentNames()
         {
             string query = @"
-                    select DepartmentName from dbo.Department              
+                    select NomeDepto from dbo.departamento              
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");
