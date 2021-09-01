@@ -12,6 +12,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Serialization;
 using System.IO;
 using Microsoft.Extensions.FileProviders;
+using Microsoft.AspNetCore.Http;
 
 namespace WebAPI
 {
@@ -39,8 +40,8 @@ namespace WebAPI
                 .AddNewtonsoftJson(options =>
                 options.SerializerSettings.ReferenceLoopHandling = Newtonsoft
                 .Json.ReferenceLoopHandling.Ignore)
-                .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver 
-                = new DefaultContractResolver());              
+                .AddNewtonsoftJson(options => options.SerializerSettings.ContractResolver
+                = new DefaultContractResolver());
 
             services.AddControllers();
         }
@@ -65,9 +66,12 @@ namespace WebAPI
                 endpoints.MapControllers();
             });
 
+            Directory.CreateDirectory(Directory.GetCurrentDirectory() + "\\Photos\\");
+
             /*
              * Metodo para salvar as fotos
              */
+
             app.UseStaticFiles(new StaticFileOptions
             {
                 FileProvider = new PhysicalFileProvider(
