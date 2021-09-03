@@ -28,8 +28,11 @@ export class ShowDepComponent implements OnInit {
 
   addClick(){
     this.dep={
-      DepartmentId:0,
-      DepartmentName:""
+      IdDepto:0,
+      NomeDepto:"",
+      Gerente:0,
+      Divisao:"",
+      Local:""
     }
     this.ModalTitle="Add Department";
     this.ActivateAddEditDepComp=true;
@@ -43,7 +46,7 @@ export class ShowDepComponent implements OnInit {
 
   deleteClick(item: any){
     if(confirm('Are you sure??')){
-      this.service.deleteDepartment(item.DepartmentId).subscribe(data=>{
+      this.service.deleteDepartment(item.IdDepto).subscribe(data=>{
         alert(data.toString());
         this.refreshDepList();
       })
@@ -70,10 +73,10 @@ export class ShowDepComponent implements OnInit {
     var DepartmentNameFilter = this.DepartmentNameFilter;
 
     this.DepartmentList = this.DepartmentListWithoutFilter.filter(function (el:any){
-        return el.DepartmentId.toString().toLowerCase().includes(
+        return el.IdDepto.toString().toLowerCase().includes(
           DepartmentIdFilter.toString().trim().toLowerCase()
         )&&
-        el.DepartmentName.toString().toLowerCase().includes(
+        el.NomeDepto.toString().toLowerCase().includes(
           DepartmentNameFilter.toString().trim().toLowerCase()
         )
     });

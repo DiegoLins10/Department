@@ -1,15 +1,30 @@
-<div class="form-froup row">
+<div class="form-froup row" style="width: 100%;">
 
-    <label class="col-sm-2 col-form-label">Department Name</label>
-    <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)] = "DepartmentName"
+    <label class="col-sm-2 col-form-label mt-3">Nome departamento</label>
+    <div class="col-sm-10 mt-3">
+        <input type="text" class="form-control" [(ngModel)] = "NomeDepto"
+        placeholder="Enter Department Name">
+    </div>
+    <label class="col-sm-2 col-form-label mt-3">Gerente</label>
+    <div class="col-sm-10 mt-3">
+        <input type="text" class="form-control" [(ngModel)] = "Gerente"
+        placeholder="Enter Department Name">
+    </div>
+    <label class="col-sm-2 mt-3 col-form-label">Divisao</label>
+    <div class="col-sm-10 mt-3">
+        <input type="text" class="form-control" [(ngModel)] = "Divisao"
+        placeholder="Enter Department Name">
+    </div>
+    <label class="col-sm-2 mt-3 col-form-label mb-4">Local</label>
+    <div class="col-sm-10 mt-3">
+        <input type="text" class="form-control" [(ngModel)] = "Local"
         placeholder="Enter Department Name">
     </div>
 </div>
 
-<button (click) = "addDepartment()" *ngIf="dep.DepartmentId==0" class="btn btn-primary">
-    Add
+<button (click) = "addDepartment()" *ngIf="dep.IdDepto==0" class="btn btn-primary">
+    Adicionar
 </button>
-<button (click) = "updateDepartment()" *ngIf="dep.DepartmentId!=0" class="btn btn-primary">
-    Update
+<button (click) = "updateDepartment()" *ngIf="dep.IdDepto!=0" class="btn btn-primary">
+    Atualizar
 </button>

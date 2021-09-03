@@ -7,8 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class SharedService {
-readonly APIUrl = "http://localhost:5000/api";
-readonly PhotoUrl = "http://localhost:5000/Photos/"
+readonly APIUrl = "http://departamentoapi.azurewebsites.net/api";
+readonly PhotoUrl = "http://departamentoapi.azurewebsites.net/Photos/";
 
   constructor(private http:HttpClient) { }
 
