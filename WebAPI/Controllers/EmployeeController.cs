@@ -200,7 +200,7 @@ namespace WebAPI.Controllers
         public JsonResult GetAllDepartmentNames()
         {
             string query = @"
-                    select NomeDepto from dbo.departamento              
+                    select IdDepto, NomeDepto from dbo.departamento             
                     ";
             DataTable table = new DataTable();
             string sqlDataSource = _configuration.GetConnectionString("EmployeeAppCon");

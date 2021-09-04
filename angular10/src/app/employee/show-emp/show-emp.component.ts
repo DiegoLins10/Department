@@ -28,9 +28,13 @@ export class ShowEmpComponent implements OnInit {
 
   addClick(){
     this.emp={
-      EmployeeId:0,
-      EmployeeName:"",
-      Department:"",
+      IdEmpregado:0,
+      NomeEmpregado:"",
+      IdDepto: null,
+      Cargo: "",
+      Tempo_Emp: null,
+      Salario: null,
+      Comissao: null,
       DateOfJoining:"",
       PhotoFileName:"anonymous.png"
     }
@@ -45,8 +49,8 @@ export class ShowEmpComponent implements OnInit {
   }
 
   deleteClick(item: any){
-    if(confirm('Are you sure??')){
-      this.service.deleteEmployee(item.EmployeeId).subscribe(data=>{
+    if(confirm('Voce realmente deseja isso???')){
+      this.service.deleteEmployee(item.IdEmpregado).subscribe(data=>{
         alert(data.toString());
         this.refreshEmpList();
       })
@@ -73,10 +77,10 @@ export class ShowEmpComponent implements OnInit {
     var EmployeeNameFilter = this.EmployeeNameFilter;
 
     this.EmployeeList = this.EmployeeListWithoutFilter.filter(function (el:any){
-        return el.EmployeeId.toString().toLowerCase().includes(
+        return el.IdEmpregado.toString().toLowerCase().includes(
           EmployeeIdFilter.toString().trim().toLowerCase()
         )&&
-        el.EmployeeName.toString().toLowerCase().includes(
+        el.NomeEmpregado.toString().toLowerCase().includes(
           EmployeeNameFilter.toString().trim().toLowerCase()
         )
     });

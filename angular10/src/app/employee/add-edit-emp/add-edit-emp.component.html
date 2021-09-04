@@ -2,24 +2,45 @@
 
 <div class="form-froup row" style="width: 60%;">
 
-    <label class="col-sm-2 col-form-label">Employee Name</label>
+    <label class="col-sm-2 col-form-label">Nome empregado</label>
     <div class="col-sm-10">
-        <input type="text" class="form-control" [(ngModel)] = "EmployeeName"
-        placeholder="Enter Employee Name">
+        <input type="text" class="form-control" [(ngModel)] = "NomeEmpregado"
+        placeholder="Digite o nome do empregado">
     </div>
 
     <label class="col-sm-2 col-form-label">Department</label>
     <div class="col-sm-10">
-        <select class="form-control" [(ngModel)] = "Department">
+        <select class="form-control" [(ngModel)] = "IdDepto">
             <option>--Select--</option>
             <option *ngFor="let depName of DepartmentsList">
-                {{depName.DepartmentName}}
+              {{depName.IdDepto}} - {{depName.NomeDepto}}
             </option>
         </select>
     </div>
 
-    <label class="col-sm-2 col-form-label">Date of Joining</label>
+    <label class="col-sm-2 col-form-label mb-2">Cargo</label>
+    <div class="col-sm-10 mt-2 mb-2">
+        <input type="text" class="form-control" [(ngModel)] = "Cargo"
+        placeholder="Digite o seu cargo">
+    </div>
+    <label class="col-sm-2 col-form-label">Tempo de empresa</label>
     <div class="col-sm-10">
+        <input type="text" class="form-control mt-2 mb-2" [(ngModel)] = "Tempo_Emp"
+        placeholder="Digite o tempo de empresa">
+    </div>
+    <label class="col-sm-2 col-form-label">Salario</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control mt-0 mb-2" [(ngModel)] = "Salario"
+        placeholder="Digite o salario">
+    </div>
+    <label class="col-sm-2 col-form-label">Comissao</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)] = "Comissao"
+        placeholder="Digite a comissao">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Date of Joining</label>
+    <div class="col-sm-10 mt-3 mb-2">
         <input type="date" [(ngModel)] = "DateOfJoining">
 
     </div>
@@ -30,9 +51,9 @@
 </div>
 </div>
 
-<button (click) = "addEmployee()" *ngIf="emp.EmployeeId==0" class="btn btn-primary">
+<button (click) = "addEmployee()" *ngIf="emp.IdEmpregado==0" class="btn btn-primary">
     Add
 </button>
-<button (click) = "updateEmployee()" *ngIf="emp.EmployeeId!=0" class="btn btn-primary">
+<button (click) = "updateEmployee()" *ngIf="emp.IdEmpregado!=0" class="btn btn-primary">
     Update
 </button>
