@@ -32,9 +32,7 @@ export class ShowEmpComponent implements OnInit {
       NomeEmpregado:"",
       IdDepto: null,
       Cargo: "",
-      Tempo_Emp: null,
       Salario: null,
-      Comissao: null,
       DateOfJoining:"",
       PhotoFileName:"anonymous.png"
     }

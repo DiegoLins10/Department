@@ -36,9 +36,7 @@ export class AddEditEmpComponent implements OnInit {
       this.NomeEmpregado=this.emp.NomeEmpregado;
       this.IdDepto=this.emp.IdDepto;
       this.Cargo=this.emp.Cargo;
-      this.Tempo_Emp=this.emp.Tempo_Emp;
       this.Salario=this.emp.Salario;
-      this.Comissao=this.emp.Comissao;
       this.DateOfJoining=this.emp.DateOfJoining;
       this.PhotoFileName=this.emp.PhotoFileName;
       this.PhotoFilePath=this.service.PhotoUrl+this.PhotoFileName;
@@ -52,9 +50,7 @@ export class AddEditEmpComponent implements OnInit {
                 NomeEmpregado:this.NomeEmpregado,
                 IdDepto:this.IdDepto.substring(0,3).trim(),
                 Cargo:this.Cargo,
-                Tempo_Emp:this.Tempo_Emp,
                 Salario:this.Salario,
-                Comissao:this.Comissao,
                 DateOfJoining:this.DateOfJoining,
                 PhotoFileName:this.PhotoFileName
                 };
@@ -70,9 +66,7 @@ export class AddEditEmpComponent implements OnInit {
       NomeEmpregado:this.NomeEmpregado,
       IdDepto:this.IdDepto.substring(0,3).trim(),
       Cargo:this.Cargo,
-      Tempo_Emp:this.Tempo_Emp,
       Salario:this.Salario,
-      Comissao:this.Comissao,
       DateOfJoining:this.DateOfJoining,
       PhotoFileName:this.PhotoFileName};
 

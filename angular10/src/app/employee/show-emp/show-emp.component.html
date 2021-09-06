@@ -35,7 +35,9 @@ data-backdrop="static" data-keyboard="false"
             <th>
               <div class="d-flex flex-row">
                 <input [(ngModel)] = "EmployeeIdFilter" class="form-control mb-2"
-                (keyup)="FilterFn()" placeholder="Filter">
+                (keyup)="FilterFn()" placeholder="Filtrar" style="
+                width: 120px;
+            ">
 
                 <button type="button" class="btn btn-light"
                 (click)="sortResult('IdEmpregado', true)">
@@ -55,7 +57,9 @@ data-backdrop="static" data-keyboard="false"
             <th>
               <div  class="d-flex flex-row">
                 <input [(ngModel)] = "EmployeeNameFilter" class="form-control mb-2"
-                (keyup)="FilterFn()" placeholder="Filter">
+                (keyup)="FilterFn()" placeholder="Filtrar" style="
+                width: 120px;
+            ">
 
                 <button type="button" class="btn btn-light"
                 (click)="sortResult('NomeEmpregado', true)">
@@ -74,11 +78,10 @@ data-backdrop="static" data-keyboard="false"
               Nome</th>
             <th>IdDepto</th>
             <th>Cargo</th>
-            <th>Temp_Emp</th>
             <th>Salario</th>
             <th>Entrada</th>
             <th>Foto</th>
-            <th>Options</th>
+            <th>Opções</th>
         </tr>
     </thead>
     <tbody>
@@ -87,7 +90,6 @@ data-backdrop="static" data-keyboard="false"
             <td>{{dataItem.NomeEmpregado}}</td>
             <td>{{dataItem.IdDepto}}</td>
             <td>{{dataItem.Cargo}}</td>
-            <td>{{dataItem.Tempo_Emp}}</td>
             <td>{{dataItem.Salario}}</td>
             <td>{{dataItem.DateOfJoining}}</td>
             <td>{{dataItem.PhotoFileName}}</td>
