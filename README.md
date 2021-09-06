@@ -9,4 +9,5 @@ Um sistema para gerenciar os empregados e departamentos de uma empresa nesse sis
 - Visual Studio 2019
 - Vs Code
 
+## Diagrama do projeto
 ![](https://github.com/DiegoLins10/Department/blob/master/bd/Projeto.png)
