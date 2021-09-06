@@ -10,6 +10,8 @@ Um sistema para gerenciar os empregados e departamentos de uma empresa nesse sis
 - Bootstrap
 - Visual Studio 2019
 - Vs Code
+- Portal Azure (Hospedagem banco de dados e API)
+- Netlify (Hospedagem frontend angular)
 
 ## Diagrama do projeto
 ![](https://github.com/DiegoLins10/Department/blob/master/bd/Projeto.png)
