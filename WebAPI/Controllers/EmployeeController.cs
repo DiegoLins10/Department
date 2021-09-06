@@ -40,7 +40,7 @@ namespace WebAPI.Controllers
         public JsonResult Get()
         {
             string query = @"
-                    select IdEmpregado, NomeEmpregado, IdDepto, Cargo, Tempo_Emp, Salario, Comissao,
+                    select IdEmpregado, NomeEmpregado, IdDepto, Cargo, Salario, 
                     convert(varchar(10),DateOfJoining,120) as DateOfJoining,
                     PhotoFileName
                     from dbo.Empregado";
@@ -70,15 +70,13 @@ namespace WebAPI.Controllers
         {
             string query = @"
                     insert into dbo.Empregado 
-                    (NomeEmpregado, IdDepto, Cargo, Tempo_Emp, Salario, Comissao, DateOfJoining, PhotoFileName)
+                    (NomeEmpregado, IdDepto, Cargo, Salario, DateOfJoining, PhotoFileName)
                     values 
                     (
                      '" + emp.NomeEmpregado + @"'
                      ,'" + emp.IdDepto + @"'
                      ,'" + emp.Cargo + @"'
-                     ,'" + emp.Tempo_Emp + @"'
                      ,'" + emp.Salario + @"'
-                     ,'" + emp.Comissao + @"'
                      ,'" + emp.DateOfJoining + @"'
                      ,'" + emp.PhotoFileName + @"'
                     )
@@ -113,9 +111,7 @@ namespace WebAPI.Controllers
                     NomeEmpregado = '" + emp.NomeEmpregado + @"'
                     ,IdDepto = '" + emp.IdDepto + @"'
                     ,Cargo = '" + emp.Cargo + @"'
-                    ,Tempo_Emp = '" + emp.Tempo_Emp + @"'
                     ,Salario = '" + emp.Salario + @"'
-                    ,Comissao = '" + emp.Comissao + @"'
                     ,DateOfJoining = '" + emp.DateOfJoining + @"'
                     ,PhotoFileName = '" + emp.PhotoFileName + @"'  
                     where IdEmpregado = " + emp.IdEmpregado + @";  
