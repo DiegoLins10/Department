@@ -28,7 +28,7 @@ data-backdrop="static" data-keyboard="false"
     </div>
   </div>
 
-
+<div class="table-responsive">
 <table class="table table-striped">
     <thead>
         <tr>
@@ -36,7 +36,7 @@ data-backdrop="static" data-keyboard="false"
               <div class="d-flex flex-row">
                 <input [(ngModel)] = "EmployeeIdFilter" class="form-control mb-2"
                 (keyup)="FilterFn()" placeholder="Filtrar" style="
-                width: 120px;
+                width: 50%;
             ">
 
                 <button type="button" class="btn btn-light"
@@ -58,7 +58,7 @@ data-backdrop="static" data-keyboard="false"
               <div  class="d-flex flex-row">
                 <input [(ngModel)] = "EmployeeNameFilter" class="form-control mb-2"
                 (keyup)="FilterFn()" placeholder="Filtrar" style="
-                width: 120px;
+                width: 50%;
             ">
 
                 <button type="button" class="btn btn-light"
@@ -112,4 +112,4 @@ data-backdrop="static" data-keyboard="false"
         </tr>
     </tbody>
 </table>
-
+</div>
