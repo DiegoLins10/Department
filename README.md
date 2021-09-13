@@ -19,4 +19,4 @@ Um sistema para gerenciar os empregados e departamentos de uma empresa nesse sis
 
 ## Exemplo de telas
 ![](https://github.com/DiegoLins10/Department/blob/master/crud.png)
-![](https://github.com/DiegoLins10/Department/blob/master/tela.png)
+![](https://github.com/DiegoLins10/Department/blob/master/tela2.png)
