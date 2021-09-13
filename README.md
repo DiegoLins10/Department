@@ -17,5 +17,5 @@ Um sistema para gerenciar os empregados e departamentos de uma empresa nesse sis
 ![](https://github.com/DiegoLins10/Department/blob/master/bd/Projeto.png)
 
 ## Exemplo de telas
-![](https://github.com/DiegoLins10/Department/blob/master/project1.png)
-![](https://github.com/DiegoLins10/Department/blob/master/project2.png)
+![](https://github.com/DiegoLins10/Department/blob/master/crud.png)
+![](https://github.com/DiegoLins10/Department/blob/master/tela.png)
